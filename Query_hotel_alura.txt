@@ -1,0 +1,33 @@
+DROP DATABASE hotel_alura;
+
+CREATE DATABASE hotel_alura;
+
+use hotel_alura;
+
+CREATE TABLE Reserva (
+    Id INT AUTO_INCREMENT,
+    FechaEntrada DATE NOT NULL,
+    FechaSalida DATE NOT NULL,
+    Valor DECIMAL(10, 2) NOT NULL,
+    FormaPago VARCHAR(25) NOT NULL,
+    PRIMARY KEY (Id)
+) ENGINE = InnoDB;
+
+CREATE TABLE huesped (
+    Id INT AUTO_INCREMENT,
+    Nombre VARCHAR(50) NOT NULL,
+    Apellido VARCHAR(50) NOT NULL,
+    FechaNacimiento DATE NOT NULL,
+    Nacionalidad VARCHAR(50) NOT NULL,
+    Telefono VARCHAR(15) NOT NULL,
+    IdReserva INT,
+    PRIMARY KEY (Id),
+    FOREIGN KEY (IdReserva) REFERENCES Reserva(Id) ON DELETE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE login(
+    Id INT AUTO_INCREMENT,
+    Usuario VARCHAR(50) NOT NULL UNIQUE,
+    Clave VARCHAR(300) NOT NULL,
+    PRIMARY KEY (Id)
+) ENGINE = InnoDB;
