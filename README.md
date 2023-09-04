@@ -2,6 +2,8 @@
 
 * [Hotel Alura](#HotelA)
 
+* [Base de datos](#DB)
+
 * [Documentación (Javadoc)](#Documentación)
 
 * [Referencias](#Referencias)
@@ -17,6 +19,10 @@ Fue hecho con Java Swing, modelo de JDBC, (WindowBuilder) extensión "WindowBuil
 <br>
 
 ![Menu principal](https://github.com/Kxtss/Hotel-Alura-con-Java/assets/126207113/67f7b971-24f5-424a-9883-86ee74e9b1cb)
+
+# DB
+
+El archivo <i>Query_hotel_alura</i> contiene la creacion de la base de datos, las tablas y asi sus tipos que contiene cada fila, en la  tabla huesped hay un <strong>ON DELETE CASCADE</strong> que sirve para borrar el id relacionado que hay, osea, si en la tabla reserva hay un id 58 y en la tabla huesped esta referenciado en idReserva, estos se borraran a  la par ya sea desde reserva o huesped. En la tabla login el Usuario es <strong>UNIQUE</strong> esto ayuda a que no puede haber usuarios repetidos con el mismo nombre.
 
 # Documentación
 En el <strong>index.html</strong> vienen los paquetes que contiene el proyecto y toda la información necesaria para saber.
